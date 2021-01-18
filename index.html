@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body>
+<header>
+    <h1>Header</h1>
+</header>
+<div class="container">
+    <div class="list-blog">
+        <p>Chất liệu mang tính đột phá – Chống Nhăn Tuyệt Đối, kết hợp với form áo nam tính mang lại một kiểu áo thời thượng phong cách cho cánh đàn ông.
+            Đi chơi – Đi tiệc – Du lịch – Dạo phố đều được.
+        </p>
+    </div>
+    <div id="app">
+        <div class="cart">Giỏ hàng ({{ cardNumber }})</div>
+        <div class="product">
+            <div class="product-image">
+                <div class="image">
+                    <img src="images/blue.jpg" alt="">
+                </div>
+            </div>
+            <div class="product-content">
+                <h3 class="title">
+                </h3>
+                <p class="brand">Thương hiệu: No brand</p>
+                <p class="quantity" >Còn lại: 1 Sản phẩm</p>
+                <p class="quantity" >Sản phẩm đã hết hàng</p>
+
+                <div class="wrapper-price">
+                    <div class="final-price">1</div>
+                    <div class="origin-price">2}</div>
+                    <div class="sale-price">-10%</div>
+                </div>
+                <div class="wrapper-color">
+                    <div class="text">Màu sắc</div>
+                    <div class="list-color">
+                        <p class="color-text">Red</p>
+                        <ul>
+                             <li><img src="./images/blue.jpg" alt="color"></li>
+                             <li><img src="./images/red.jpg" alt="color"></li>
+                        </ul>
+                    </div>
+                </div>
+                <button
+                        class="add-to-cart">Add to cart</button>
+            </div>
+
+        </div>
+        <div class="description">
+            <ul class="extra-info">
+                <li>Thoát mồ hôi tốt</li>
+                <li>Áo thun cổ tròn thể thao Hiye chuyên được may từ chất liệu nilon thoáng mát</li>
+                <li>Kết hợp thêm sợi thun tạo độ co giãn giúp người tiêu dùng thoải mái khi mặc</li>
+                <li>Chất liệu: polyester và thun</li>
+            </ul>
+            <h2>Chất liệu bền chặt&nbsp;</h2>
+            <!-- v-html -->
+        </div>
+
+    </div>
+</div>
+<footer>
+    <h1>Footer</h1>
+</footer>
+</body>
+<script src="main.js"></script>
+
+</html>
