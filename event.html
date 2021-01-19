@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Count: {{ number }}</h1>
+        <button class="btn" v-on:click="onCountClick(3, $event)">Count</button>
+
+        <div class="box" v-on:mousemove="onMouseMove($event)">
+            <h3>Mouse position: {{ mousePosition.xPosition + ':' + mousePosition.yPosition }}</h3>
+        </div>
+        <br />
+        <form action="./server.php" v-on:submit.prevent="handleSubmitForm">
+            <label for="name">Name</label>
+            <input name="name" type="text"><br />
+            <label for="age">Age</label>
+            <input name="age" type="number" v-on:keyup.enter="handleSubmitForm"> <br />
+<!--            <button type="submit">Submit</button>-->
+        </form>
+    </div>
+
+</body>
+<script src="event.js"></script>
+</html>

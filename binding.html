@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="static" :class="objClass">text</div>
+    </div>
+</body>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            isActive: true,
+            hasError: true,
+        },
+        methods: {
+
+        },
+        computed: {
+            objClass: function () {
+                return {
+                    'active': this.isActive,
+                    'text-danger': this.hasError,
+                }
+            }
+        },
+    })
+</script>
+</html>
+

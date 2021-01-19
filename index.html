@@ -21,37 +21,44 @@
         </p>
     </div>
     <div id="app">
-        <div class="cart">Giỏ hàng ({{ cardNumber }})</div>
+        <div class="cart">Giỏ hàng ({{ cartNumber }})</div>
         <div class="product">
             <div class="product-image">
                 <div class="image">
-                    <img src="images/blue.jpg" alt="">
+                    <img :src="getProduct.imageUrl" :alt="getProduct.textColor">
                 </div>
             </div>
             <div class="product-content">
                 <h3 class="title">
+                    <a v-bind:href="url" v-bind:target="target">
+                    {{ title }}
+                    </a>
                 </h3>
                 <p class="brand">Thương hiệu: No brand</p>
-                <p class="quantity" >Còn lại: 1 Sản phẩm</p>
-                <p class="quantity" >Sản phẩm đã hết hàng</p>
+                <p class="quantity" v-if="getProduct.quantity > 0">Còn lại: {{ getProduct.quantity }} Sản phẩm</p>
+                <p class="quantity" v-else>Sản phẩm đã hết hàng</p>
 
                 <div class="wrapper-price">
-                    <div class="final-price">1</div>
-                    <div class="origin-price">2}</div>
-                    <div class="sale-price">-10%</div>
+                    <div class="final-price">{{ formatFinalPrice }}</div>
+                    <div class="origin-price">{{ formatOriginalPrice }}</div>
+                    <div class="sale-price">-{{ discountRate * 100 }}%</div>
                 </div>
                 <div class="wrapper-color">
                     <div class="text">Màu sắc</div>
                     <div class="list-color">
                         <p class="color-text">Red</p>
                         <ul>
-                             <li><img src="./images/blue.jpg" alt="color"></li>
-                             <li><img src="./images/red.jpg" alt="color"></li>
+                             <li v-for="(product, index) in products"
+                                 :class="classActive(index)"
+                                 v-on:click="onSelectProduct(index)"
+                                 :key="index">
+                                 <img :src="product.imageUrl" :alt="product.textColor">
+                             </li>
                         </ul>
                     </div>
                 </div>
                 <button
-                        class="add-to-cart">Add to cart</button>
+                        class="add-to-cart" v-on:click="onAddToCart">Add to cart</button>
             </div>
 
         </div>
